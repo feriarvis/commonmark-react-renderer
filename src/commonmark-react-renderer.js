@@ -52,7 +52,8 @@ var defaultRenderers = {
         return createElement('code', getCoreProps(props), props.children);
     },
     heading: function Heading(props) {
-        return createElement('h' + props.level, getCoreProps(props), props.children);
+//         return createElement('h' + props.level, getCoreProps(props), props.children);
+        return props
     },
 
     text: null,
