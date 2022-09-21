@@ -52,8 +52,7 @@ var defaultRenderers = {
         return createElement('code', getCoreProps(props), props.children);
     },
     heading: function Heading(props) {
-//         return createElement('h' + props.level, getCoreProps(props), props.children);
-        return props
+        return createElement('h' + props.level, getCoreProps(props), props.children);
     },
 
     text: null,
@@ -236,6 +235,7 @@ function getNodeProps(node, key, opts, renderer, context) {
             props.inline = true;
             break;
         case 'heading':
+            props._literal = node?._firstChild?._literal || '';
             props.level = node.level;
             break;
         case 'softbreak':
